@@ -1,18 +1,18 @@
 import { Component } from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import ScifiBooks from "../data/scifi.json";
+import scifiBooks from "../data/scifi.json";
 
 class LatestRelease extends Component {
   render() {
     return (
       <Container>
         <Row>
-          {ScifiBooks.map((book) => (
-            <Col lg={3} md={4} sm={6} className="my-2" key={book.asin}>
+          {scifiBooks.map(({ asin, img, title }) => (
+            <Col lg={3} md={4} sm={6} className="my-2" key={asin}>
               <Card className="my-card">
-                <Card.Img className="my-card-img" src={book.img} />
+                <Card.Img className="my-card-img" src={img} />
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
+                  <Card.Title>{title}</Card.Title>
                 </Card.Body>
               </Card>
             </Col>
